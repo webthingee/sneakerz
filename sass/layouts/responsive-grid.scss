@@ -1,0 +1,239 @@
+@import 'susy';
+
+$total-columns  : 12;             // a 12-column grid
+$column-width   : 70px;           // each column is 4em wide
+$gutter-width   : 30px;            // 1em gutters between columns
+$grid-padding   : $gutter-width;  // grid-padding equal to gutters
+//$total-width: ( $total-columns * ($column-width + $gutter-width) ) + ( 2 * $grid-padding ) - $gutter-width;
+$container-style: fluid;
+//$container-width: 1170px;
+
+$tall           : 320px;
+$grande         : 768px;
+$venti          : 960px;
+$trenta         : 1220px; 
+
+$tallBreakpoint   : $tall 1 $grande;
+$grandeBreakpoint : $grande 6 $venti;
+$ventiBreakpoint  : $venti 12 $trenta;
+$trentaBreakpoint : $trenta 12;  
+
+// @include at-breakpoint(781px 8) {
+//   .span_#{$i} { @include span-columns($i, 8); }
+// }
+
+// @include at-breakpoint(940px 12) {
+//   .span_#{$i} { @include span-columns($i, 12); }
+// } 
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; } 
+
+// #page {
+//   // page acts as a container for our grid.
+//   @include container;
+//   @include susy-grid-background;
+
+//   @include at-breakpoint($tallBreakpoint) {
+//     @include set-container-width;
+//     @include susy-grid-background;      
+//   }
+//   @include at-breakpoint($grandeBreakpoint) {
+//     @include set-container-width;
+//     @include susy-grid-background;      
+//   }
+//   @include at-breakpoint($ventiBreakpoint) {
+//     @include set-container-width;
+//     @include susy-grid-background;      
+//   }
+//   @include at-breakpoint($trentaBreakpoint) {
+//     @include set-container-width;
+//     @include susy-grid-background;      
+//   }
+
+//   // header and footer are full-width by default.
+//   header, footer, #navigation { clear: both; }
+
+//   // nav spans 3 columns of total 12.
+//   // nav { @include span-columns(3,12); }
+// }
+
+// #main {
+//   @include columns(12);
+// }
+// #main {
+//   @include container;
+// }
+// .sidebar-first,
+// #content,
+// .sidebar-second { 
+//   @include span-columns(1 ,1); 
+// }
+
+.row { clear: both; }
+
+div.omega { margin-right: 0; }
+
+// // Two Sidebars
+// .two-sidebars {
+//   .sidebar-first {       
+//     @include at-breakpoint(800px 12) {
+//       @include span-columns(3 ,12);
+//     }
+//   }
+//   #content {       
+//     @include at-breakpoint(800px 12) {
+//       @include span-columns(6, 12);
+//     }
+//   }
+//   .sidebar-second {       
+//     @include at-breakpoint(800px 12) {
+//       @include span-columns(3 omega ,12);
+//     }
+//   }
+// }
+
+// // One Sidebar - First
+// .one-sidebar.sidebar-first {
+//   .sidebar-first {     
+//     @include at-breakpoint(800px 12) {
+//       @include span-columns(4 ,12);
+//     }
+//   }
+//   #content {     
+//     @include at-breakpoint(800px 12) {
+//       @include span-columns(8 omega, 12);
+//     }
+//   }
+// }
+
+// // One Sidebar - Second
+// .one-sidebar.sidebar-second {
+//   #content {     
+//     @include at-breakpoint(800px 12) {
+//       @include span-columns(8, 12);
+//     }
+//   }
+//   .sidebar-second {     
+//     @include at-breakpoint(800px 12) {
+//       @include span-columns(4 omega ,12);
+//     }
+//   }
+// }
+// #page {
+//   // background: #bada55;
+// }
+.col {
+  height: 100px;
+  background: yellow;
+}
+.col:last-of-type {
+  margin-right: 0;
+}
+.underlay {
+  margin: 5px 0;
+  display: block;
+  clear: both;
+  height: 110px;
+}
+
+@include at-breakpoint($grandeBreakpoint) {
+  // set omegas
+  @for $i from 1 to 12 {
+
+    div[class*='#{$i}of#{$i}'] {
+      background: green;
+      margin-right: 0;
+    }
+
+    $x: ($i * 2);
+    div[class*='#{$i}of#{$x}'] {
+      background: green;
+      margin-right: 0;
+    }
+  }
+}
+
+@include at-breakpoint($ventiBreakpoint) {
+  // set omegas
+  @for $i from 1 to 12 {
+
+    div[class*='#{$i}of#{$i}'] {
+      background: green;
+      margin-right: 0;
+    }
+    
+    $x: ($i * 2);
+    div[class*='#{$i}of#{$x}'] {
+      background: green;
+      //margin-right: 0;
+    }
+  }
+}
+
+@include at-breakpoint($trentaBreakpoint) {
+  // set omegas
+  @for $i from 1 to 12 {
+
+    div[class*='#{$i}of#{$i}'] {
+      background: green;
+      margin-right: 0;
+    }
+    
+    $x: ($i * 2);
+    div[class*='#{$i}of#{$x}'] {
+      background: green;
+      //margin-right: 0;
+    }
+  }
+}
+
+  // @for $i from 2 to 7 {
+  //   $x: ($i * 2);
+  //   div[class*='#{$i}of#{$x}'] {
+  //     background: red;
+  //     @include span-columns(3, 12);
+  //   }
+  // }
+
+  // div[class*='2of4'] {
+  //   background: red;
+  //   @include span-columns(3, 12);
+  // }
+// }  
+
+// Generate a Grid System
+@for $i from 1 to 12 {
+  .span_#{$i} { @include span-columns(1, 1); }
+  
+  @include at-breakpoint($grandeBreakpoint) {
+    .span_#{$i} { 
+      @include span-columns($i, 6);
+      // @include squish(0,0);
+    }
+
+    .span_12,
+    .span_11,
+    .span_10,
+    .span_9,
+    .span_8,
+    .span_7,
+    .span_6,
+    .span_5,
+    .span_4 { 
+      @include span-columns(6, 6);
+      // @include squish(0,0);
+    }
+  }
+  
+  @include at-breakpoint($ventiBreakpoint) {
+    .span_#{$i} { @include span-columns($i, 12); }
+  }
+
+  @include at-breakpoint($trentaBreakpoint) {
+    .span_#{$i} { 
+      @include span-columns($i, 12);
+      // @include post(0);
+      // @include pad(1,1);
+    }
+  }
+}
