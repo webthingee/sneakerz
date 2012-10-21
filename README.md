@@ -1,6 +1,6 @@
 # Sneakerz #
 
-Zentra is a base theme for zen that...
+Sneakerz is a Drupal theme that will get you up and running in TwitterBootstrap-nan Style.
 
 - Uses SASS
 - Implements CSS structure based on SMACSS
