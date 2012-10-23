@@ -27,6 +27,8 @@ stylesheets[all][] = css/extensions/twitter-bootstrap/stylesheets/bootstrap.css
 
 ; Optionally add some JavaScripts to your theme.
 
+scripts[] = js/twitter-bootstrap/bootstrap-collapse.js
+scripts[] = js/twitter-bootstrap/bootstrap-button.js
 ;scripts[] = js/script.js
 
 ; This section lists the regions defined in Zen's default page.tpl.php and

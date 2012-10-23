@@ -5,9 +5,12 @@ Sneakerz is a Drupal theme that will get you up and running in TwitterBootstrap-
 - Uses SASS
 - Implements CSS structure based on SMACSS
 
+### REQUIREMENTS ###
+- Drupal
+- jQuery Update 1.8.2
+
 ### @todo ###
 - search
-- mobile menu
 
 # Documentation #
 
